@@ -96,7 +96,9 @@ then
     GOPATH=$CUSTOM_GOPATH:$GOPATH export GOPATH
 fi
 export GO15VENDOREXPERIMENT=1
-go get -tags openshift ./...
+
+# it is expected that dependencies will be vendored in ./vendor
+# go get -tags openshift ./...
 
 mkdir -p $build/bin
 mv $b/* $build/bin
